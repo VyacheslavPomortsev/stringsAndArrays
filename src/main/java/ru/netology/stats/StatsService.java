@@ -46,18 +46,24 @@ public class StatsService {
 
     public int minDay(long[] sales) {
         int minDay = 0;
+        int average = averageSales(sales);
+
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < 15)
+            if (sales[i] < average) {
                 minDay++;
+            }
         }
         return minDay;
     }
 
     public int maxDay(long[] sales) {
         int maxDay = 0;
+        int average = averageSales(sales);
+
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > 15)
+            if (sales[i] > average) {
                 maxDay++;
+            }
         }
         return maxDay;
     }
